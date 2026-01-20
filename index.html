@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            color: white;
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+
+        .games-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 20px 0;
+        }
+
+        .game-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        .game-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .game-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.2) 0%, transparent 50%);
+        }
+
+        .game-info {
+            padding: 25px;
+        }
+
+        .game-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .game-description {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .game-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-top: 5px;
+        }
+
+        .coming-soon {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .coming-soon:hover {
+            transform: none;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 40px;
+            }
+
+            .games-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎮 Game Hub</h1>
+            <p class="subtitle">Choose your adventure</p>
+        </header>
+
+        <div class="games-grid">
+            <!-- Tetris Game -->
+            <a href="tetris/index.html" class="game-card">
+                <div class="game-image">
+                    🟦
+                </div>
+                <div class="game-info">
+                    <div class="game-title">Tetris</div>
+                    <div class="game-description">
+                        Classic block-stacking puzzle game. Clear lines and beat your high score!
+                    </div>
+                    <span class="game-tag">Puzzle</span>
+                    <span class="game-tag">Classic</span>
+                </div>
+            </a>
+
+            <!-- Placeholder for future games -->
+            <div class="game-card coming-soon">
+                <div class="game-image">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    🐍
+                </div>
+                <div class="game-info">
+                    <div class="game-title">Snake</div>
+                    <div class="game-description">
+                        Guide the snake to eat food and grow longer without hitting yourself!
+                    </div>
+                    <span class="game-tag">Arcade</span>
+                    <span class="game-tag">Classic</span>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-image">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    🎯
+                </div>
+                <div class="game-info">
+                    <div class="game-title">Memory Match</div>
+                    <div class="game-description">
+                        Test your memory by matching pairs of cards in this classic game.
+                    </div>
+                    <span class="game-tag">Puzzle</span>
+                    <span class="game-tag">Memory</span>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-image">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    🚀
+                </div>
+                <div class="game-info">
+                    <div class="game-title">Space Shooter</div>
+                    <div class="game-description">
+                        Defend Earth from alien invaders in this fast-paced shooter!
+                    </div>
+                    <span class="game-tag">Action</span>
+                    <span class="game-tag">Shooter</span>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-image">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    🧩
+                </div>
+                <div class="game-info">
+                    <div class="game-title">2048</div>
+                    <div class="game-description">
+                        Slide and combine tiles to reach the coveted 2048 tile!
+                    </div>
+                    <span class="game-tag">Puzzle</span>
+                    <span class="game-tag">Strategy</span>
+                </div>
+            </div>
+
+            <div class="game-card coming-soon">
+                <div class="game-image">
+                    <span class="coming-soon-badge">Coming Soon</span>
+                    💣
+                </div>
+                <div class="game-info">
+                    <div class="game-title">Minesweeper</div>
+                    <div class="game-description">
+                        Clear the board without detonating any mines in this logic game.
+                    </div>
+                    <span class="game-tag">Puzzle</span>
+                    <span class="game-tag">Logic</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
